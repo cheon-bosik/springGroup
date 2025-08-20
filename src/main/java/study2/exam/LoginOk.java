@@ -3,7 +3,6 @@ package study2.exam;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -30,7 +29,7 @@ public class LoginOk extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		if(vo.getMid() != null) {
-			// 정상적으로 인증이 확인되었다면 아이디를 쿠키에 저장할시 판변한다.
+			// 정상적으로 인증이 확인되었다면 아이디를 쿠키에 저장할시 판별한다.
 			Cookie cookieMid = new Cookie("cMid", mid);
 			cookieMid.setPath("/");
 			if(idSave.equals("on")) cookieMid.setMaxAge(60*60*24*7);
